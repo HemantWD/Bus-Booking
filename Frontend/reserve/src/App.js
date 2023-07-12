@@ -1,8 +1,18 @@
-import { Header } from "./components/Header";
+import { Home } from "./Pages/Home";
+import Footer from "./components/Layout/Footer";
+import { Header } from "./components/Layout/Header";
 // import { Navbar } from "./components/navbar";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <div>
+        <Home />
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default App;

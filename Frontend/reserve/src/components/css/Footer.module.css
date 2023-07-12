@@ -1,0 +1,40 @@
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 30%;
+  /* background-color: antiquewhite; */
+}
+
+.left h4 {
+  margin-bottom: 10px;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+.column {
+  width: 30%;
+}
+.column h4 {
+  margin-bottom: 10px;
+}
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.column ul li {
+  margin-bottom: 5px;
+}
+
+.column ul li a {
+  text-decoration: none;
+  color: #333;
+}
