@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  height: 80vh;
+  /* position: relative; */
+}
+
+.container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.search {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 13%;
+  min-height: 100%;
+  transform: translate(50%, 40%);
+}
+
+.input {
+  display: flex;
+}
+
+.submit {
+  width: 100%;
+  /* margin: auto; */
+  top: 100px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit Button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 15px;
+}
