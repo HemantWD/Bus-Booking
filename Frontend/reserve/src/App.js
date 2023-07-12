@@ -1,5 +1,8 @@
+import { Header } from "./components/Header";
+// import { Navbar } from "./components/navbar";
+
 function App() {
-  return <div>Hello</div>;
+  return <Header />;
 }
 
 export default App;
