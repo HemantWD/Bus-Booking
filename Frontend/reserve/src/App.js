@@ -1,8 +1,8 @@
 import { About } from "./Pages/About";
+import { Customer } from "./Pages/Customer";
 import { Home } from "./Pages/Home";
 import Footer from "./components/Layout/Footer";
 import { Header } from "./components/Layout/Header";
-// import { Navbar } from "./components/navbar";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <div>
         <Home />
         <About />
+        <Customer />
       </div>
       <Footer />
     </>
