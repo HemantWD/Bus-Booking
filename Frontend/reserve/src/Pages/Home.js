@@ -7,7 +7,7 @@ import Button from "../components/Layout/Button";
 export const Home = (props) => {
   return (
     <div className={classes.container}>
-      <img src={wallpaper} alt="image" />
+      <img src={wallpaper} alt="background" />
       <div className={classes.search}>
         <div className={classes.input}>
           <SearchInput />
