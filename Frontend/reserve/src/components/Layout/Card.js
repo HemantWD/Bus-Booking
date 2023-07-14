@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../assets/card1.jpeg";
 import classes from "../css/Card.module.css";
 
 export const Card = ({ image, title, text }) => {
