@@ -1,19 +1,18 @@
-import { About } from "./Pages/About";
-import { Customer } from "./Pages/Customer";
-import { Home } from "./Pages/Home";
-import Footer from "./components/Layout/Footer";
-import { Header } from "./components/Layout/Header";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Main } from "./Pages/Main";
+import { Login } from "./Pages/Auth/Login";
+import { Register } from "./Pages/Auth/Register";
 
 function App() {
   return (
     <>
-      <Header />
-      <div>
-        <Home />
-        <About />
-        <Customer />
-      </div>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={Main} />
+          <Route path="/register" Component={Register} />
+          <Route path="/login" Component={Login} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
