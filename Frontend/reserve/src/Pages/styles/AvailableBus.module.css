@@ -1,0 +1,17 @@
+.container {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.availablebus {
+  align-items: center;
+  display: flex;
+  /* background-color: blueviolet; */
+  flex-direction: column;
+  width: 100%;
+}
