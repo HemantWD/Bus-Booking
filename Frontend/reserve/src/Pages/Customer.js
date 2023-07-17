@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Customer.module.css";
+import classes from "./styles/Customer.module.css";
 import profile from "../assets/profile.png";
 
 const data = [
