@@ -1,0 +1,27 @@
+.card {
+  /* background-color: aqua; */
+  margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 90%;
+}
+
+.bus {
+  padding: 23px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.name {
+  /* background-color: aquamarine; */
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.booking {
+  border-left: 1px solid grey;
+  padding-left: 3rem;
+}
+.booking h3 {
+  font-size: 23px;
+}
