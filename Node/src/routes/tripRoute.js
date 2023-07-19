@@ -1,6 +1,7 @@
 const express = require("express");
 const Trip = require("../modal/tripModal");
 const Ticket = require("../modal/ticketModal");
+const Bus = require("../modal/busDetailsModal");
 
 const router = express.Router();
 
@@ -16,6 +17,18 @@ router.get("/", (req, res) => {
         message: "Failed to fetch trips ",
       });
     });
+});
+
+// GET request to get the bus details
+router.get("/bus_owner", async (req, res) => {
+  try {
+    const data = await Bus.find();
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error Fetching data",
+    });
+  }
 });
 
 // POST request to post the details to the database
