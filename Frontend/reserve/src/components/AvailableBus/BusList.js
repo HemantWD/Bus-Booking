@@ -1,9 +1,12 @@
 import React from "react";
 import { Date } from "./Date";
 import classes from "../css/BusList.module.css";
-import Button from "../Layout/Button";
+import { BookSeat } from "./BookSeat";
 
 export const BusList = () => {
+  const handleClick = () => {
+    console.log("Clicked");
+  };
   return (
     <>
       <div>
@@ -23,9 +26,10 @@ export const BusList = () => {
               <h2>Trip Cost</h2>
               <h3>Rs. 899/-</h3>
             </div>
-            <Button>View Seats</Button>
+            <button onClick={handleClick}>View Seats</button>
           </div>
         </div>
+        <BookSeat />
       </div>
     </>
   );
