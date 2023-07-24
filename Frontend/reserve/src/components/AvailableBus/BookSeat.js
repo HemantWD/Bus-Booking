@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../css/BookSeat.module.css";
 import { SeatLayout } from "./SeatLayout";
 
-export const BookSeat = () => {
+const BookSeat = () => {
+  const [selected, setSelected] = useState(null);
+  const handleOnchangeHandler = (option) => {
+    setSelected(option);
+  };
+
   return (
     <>
       <div className={classes.select}>
@@ -34,21 +39,39 @@ export const BookSeat = () => {
 
           <div className={classes.selected}>
             <div className={classes.fill}>
-              <input type="radio" />
-              <p>Vacant Seats</p>
+              <input
+                type="radio"
+                id="Option 1"
+                value="Option 1"
+                checked={selected === "Option 1"}
+                onChange={() => handleOnchangeHandler("Option 1")}
+              />
+              <label htmlFor="Option 1">Vacant Seats</label>
             </div>
             <div className={classes.fill}>
-              <input type="radio" />
-              <p>Reserved Seats</p>
+              <input
+                type="radio"
+                id="Option 2"
+                value="Option 2"
+                checked={selected === "Option 2"}
+                onChange={() => handleOnchangeHandler("Option 2")}
+              />
+              <label htmlFor="Option 2">Reserved Seats</label>
             </div>
             <div className={classes.fill}>
-              <input type="radio" />
-              <p>Your Seats</p>
+              <input
+                type="radio"
+                id="Option 3"
+                value="Option 3"
+                checked={selected === "Option 3"}
+                onChange={() => handleOnchangeHandler("Option 3")}
+              />
+              <label htmlFor="Option 3">Your Seats</label>
             </div>
           </div>
         </div>
 
-        <div className={classes.selectSeats}>
+        <div className={classes.selectSeats} style={{ display: "flex" }}>
           <SeatLayout />
           <div className={classes.right}>
             <h3>Boarding & Droping</h3>
@@ -79,3 +102,5 @@ export const BookSeat = () => {
     </>
   );
 };
+
+export default BookSeat;

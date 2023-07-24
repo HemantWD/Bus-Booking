@@ -3,26 +3,53 @@ import classes from "../css/SeatLayout.module.css";
 
 export const SeatLayout = () => {
   return (
-    <div>
-      <div className={classes.section}>
+    <>
+      <div className={classes["seat-section"]}>
         <h2>Upper Seat</h2>
-        <div className={classes.seat}>
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
-          <input type="button" />
+        <div className={classes.seats}>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button" className={classes["down-seat"]}></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+        </div>
+        <h2 className={classes["seat-position"]}>Lower Seat</h2>
+        <div className={classes.seats}>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button" className={classes["down-seat"]}></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
+          <input type="button"></input>
         </div>
       </div>
-    </div>
+    </>
   );
 };

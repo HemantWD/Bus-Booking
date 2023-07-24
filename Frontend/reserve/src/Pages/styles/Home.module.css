@@ -38,3 +38,17 @@
   padding: 15px 30px;
   font-size: 15px;
 }
+
+.btn {
+  background-color: #ff8700;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.5rem 1.5rem;
+  margin-left: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bolder;
+  transition-duration: 0.5s;
+}
+btn:hover {
+  background-color: #6366f1;
+}

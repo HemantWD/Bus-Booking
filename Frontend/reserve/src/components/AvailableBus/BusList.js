@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Date } from "./Date";
 import classes from "../css/BusList.module.css";
-import { BookSeat } from "./BookSeat";
+import BookSeat from "./BookSeat";
 
 export const BusList = () => {
+  const [view, setView] = useState(false);
   const handleClick = () => {
-    console.log("Clicked");
+    setView(!view);
   };
   return (
     <>
@@ -15,8 +16,8 @@ export const BusList = () => {
       <div className={classes.card}>
         <div className={classes.bus}>
           <div>
-            <div>
-              <h2 className={classes.name}>Volvo Buses</h2>
+            <div className={classes.name}>
+              <h2>Volvo Buses</h2>
               <p>A/C Sleeper</p>
               <p>17:45 PM --- 12hrs --- 8:00 AM </p>
             </div>
@@ -26,10 +27,12 @@ export const BusList = () => {
               <h2>Trip Cost</h2>
               <h3>Rs. 899/-</h3>
             </div>
-            <button onClick={handleClick}>View Seats</button>
+            <button className={classes.btn} onClick={handleClick}>
+              View Seats
+            </button>
           </div>
         </div>
-        <BookSeat />
+        {view && <BookSeat />}
       </div>
     </>
   );

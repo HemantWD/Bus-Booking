@@ -2,7 +2,6 @@ import React from "react";
 import wallpaper from "../assets/bus.jpg";
 import classes from "./styles/Home.module.css";
 import { SearchInput } from "../components/SearchInput";
-import Button from "../components/Layout/Button";
 
 export const Home = (props) => {
   return (
@@ -13,7 +12,7 @@ export const Home = (props) => {
           <SearchInput />
         </div>
         <div className={classes.submit}>
-          <Button>Search</Button>
+          <button className={classes.btn}>Search</button>
         </div>
       </div>
     </div>
