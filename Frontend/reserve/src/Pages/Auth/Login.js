@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../components/Layout/Button";
 import classes from "./Login.module.css";
 
 export const Login = () => {
@@ -14,8 +13,8 @@ export const Login = () => {
           <input type="password" placeholder="Enter Your Password" required />
         </div>
         <div className={classes.btn}>
-          <Button>Login</Button>
-          <Button>Forgot Password</Button>
+          <button>Login</button>
+          <button>Forgot Password</button>
         </div>
       </form>
     </div>

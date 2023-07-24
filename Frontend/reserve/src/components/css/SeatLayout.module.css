@@ -1,12 +1,37 @@
-.section {
-  border: 1px solid grey;
+.seat-section {
+  /* border: 1px solid; */
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.87);
+  border-radius: 15px;
+  width: 600px;
   padding: 15px;
-  border-radius: 10px;
-  width: 43rem;
+  margin: 15px;
 }
-
-.seat {
+.seat-section h2 {
+  font-size: larger;
+  padding: 15px 0;
+  margin-top: 1.25rem;
+}
+.seats {
+  gap: 10px;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 10;
+}
+
+.seats div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0px;
+  border: 3px solid rgb(154, 154, 154);
+  width: 70px;
+}
+.seats input {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* padding: 10px 0px; */
+  border: 2px solid rgb(154, 154, 154);
+  border-radius: 15px;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.5);
+  width: 70px;
+}
+
+.down-seat {
+  grid-column-start: 3;
 }
