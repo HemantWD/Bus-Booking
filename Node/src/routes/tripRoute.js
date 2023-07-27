@@ -5,8 +5,12 @@ const busData = require("../modal/busData");
 
 const router = express.Router();
 
+router.get("/", async (req, res) => {
+  res.status(200).send("Reserve Bus Booking Application Server");
+});
+
 // GET request to get the trip details
-router.get("/", (req, res) => {
+router.get("/trips", (req, res) => {
   Trip.find()
     .then((trips) => {
       res.status(200).json(trips);
@@ -21,15 +25,15 @@ router.get("/", (req, res) => {
 
 // GET request to get bus details
 router.get("/busData", (req, res) => {
-  const { from, to, days } = req.query;
+  const { From, To, DaysRunOn } = req.query;
+  const daysArray = (DaysRunOn || "").split(",").map((day) => day.trim());
   busData
-    .find({ from, to, days })
-    .then((data) => {
-      res.status(200).json(data);
-      res.end();
+    .find({ From, To, DaysRunOn: { $in: daysArray } })
+    .then((busData) => {
+      res.status(200).json(busData);
     })
-    .catch((error) => {
-      console.log("Failed to Fetch the data: ", error);
+    .catch((err) => {
+      console.error("Failed to Fetch the Data: ", err.message);
       res.status(500).json({
         message: "Failed to fetch bus data",
       });
@@ -37,7 +41,7 @@ router.get("/busData", (req, res) => {
 });
 
 // POST request to post the details to the database
-router.post("/", (req, res) => {
+router.post("/trips", (req, res) => {
   const {
     date,
     from,

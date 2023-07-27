@@ -44,4 +44,5 @@ const busDataSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("BusData", busDataSchema);
+const busData = mongoose.model("BusData", busDataSchema);
+module.exports = busData;

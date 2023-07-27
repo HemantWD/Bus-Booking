@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Date } from "./Date";
 import classes from "../css/BusList.module.css";
 import BookSeat from "./BookSeat";
 
@@ -10,9 +9,6 @@ export const BusList = () => {
   };
   return (
     <>
-      <div>
-        <Date />
-      </div>
       <div className={classes.card}>
         <div className={classes.bus}>
           <div>
