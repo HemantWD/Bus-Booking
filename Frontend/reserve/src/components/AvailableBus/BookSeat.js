@@ -1,11 +1,28 @@
 import React, { useState } from "react";
 import classes from "../css/BookSeat.module.css";
 import { SeatLayout } from "./SeatLayout";
+import { useNavigate } from "react-router-dom";
 
 const BookSeat = () => {
   const [selected, setSelected] = useState(null);
+  const navigate = useNavigate();
   const handleOnchangeHandler = (option) => {
     setSelected(option);
+  };
+
+  const bookingHandler = () => {
+    navigate("/payment");
+    // try{
+    //   const response = await fetch("http://localhost:5000/trips/ticket-details",{
+    //     method:"POST",
+    //     headers:{
+    //       "Content-Type":"application/json",
+    //     },
+    //     body:JSON.stringify()
+    //   })
+    // }catch(error){
+    //   console.log(error)
+    // }
   };
 
   return (
@@ -95,7 +112,9 @@ const BookSeat = () => {
               Amount : <span>INR 750.00</span>
             </p>
             <p>Includes all fair charges</p>
-            <button className={classes.btn}>Proceed To Book</button>
+            <button className={classes.btn} onClick={bookingHandler}>
+              Proceed To Book
+            </button>
           </div>
         </div>
       </div>
