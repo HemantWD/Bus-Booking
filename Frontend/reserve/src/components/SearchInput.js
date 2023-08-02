@@ -2,11 +2,10 @@ import React from "react";
 import classes from "./css/Search.module.css";
 
 export const SearchInput = (props) => {
+  const { type, placeholder } = props;
   return (
     <div className={classes.searchInput}>
-      <input type="text" placeholder="From" />
-      <input type="text" placeholder="To" />
-      <input type="date" placeholder="Date" />
+      <input type={type} placeholder={placeholder} />
     </div>
   );
 };

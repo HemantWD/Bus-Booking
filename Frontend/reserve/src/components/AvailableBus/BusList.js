@@ -17,6 +17,16 @@ export const BusList = () => {
               <p>A/C Sleeper</p>
               <p>17:45 PM --- 12hrs --- 8:00 AM </p>
             </div>
+            <div className={classes.facilities}>
+              <h4>
+                <span>Live Tracking</span>
+                <span>Amenities</span>
+                <span>Bus Photos</span>
+                <span>Booking Policies</span>
+                <span>Review</span>
+                <span>Rest Stop</span>
+              </h4>
+            </div>
           </div>
           <div className={classes.booking}>
             <div className={classes.price}>
