@@ -1,6 +1,7 @@
 .card {
   /* background-color: aqua; */
   margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: 90%;
@@ -41,4 +42,14 @@
 }
 btn:hover {
   background-color: #6366f1;
+}
+
+.facilities {
+  font-size: 15px;
+}
+.facilities span {
+  margin-right: 35px;
+  font-size: medium;
+  color: grey;
+  cursor: pointer;
 }
