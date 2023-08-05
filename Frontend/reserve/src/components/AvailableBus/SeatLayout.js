@@ -1,55 +1,13 @@
 import React from "react";
-import classes from "../css/SeatLayout.module.css";
 
 export const SeatLayout = () => {
   return (
-    <>
-      <div className={classes["seat-section"]}>
-        <h2>Upper Seat</h2>
-        <div className={classes.seats}>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button" className={classes["down-seat"]}></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-        </div>
-        <h2 className={classes["seat-position"]}>Lower Seat</h2>
-        <div className={classes.seats}>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button" className={classes["down-seat"]}></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-          <input type="button"></input>
-        </div>
+    <div className="bus-seats-componeny">
+      <div className="bus-upper-seat">
+        <h4>Upper Seat</h4>
+        <br />
+        <div className="upper-seat"></div>
       </div>
-    </>
+    </div>
   );
 };
