@@ -15,11 +15,6 @@ export const AvailableBus = () => {
         </div>
         <div className={classes.availablebus}>
           <BusList />
-          <BusList />
-          <BusList />
-          <BusList />
-          <BusList />
-          <BusList />
         </div>
       </div>
       <Footer />

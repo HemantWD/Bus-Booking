@@ -20,7 +20,7 @@
 .seats div {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 0px;
-  border: 3px solid rgb(154, 154, 154);
+  /* border: 3px solid rgb(154, 154, 154); */
   width: 70px;
 }
 .seats input {

@@ -1,0 +1,63 @@
+.bus-ticket-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 2px solid grey;
+  width: 40%;
+  min-height: 235px;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.bus-ticket-heading {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.heading {
+  text-align: center;
+}
+
+.destination {
+  font-size: 14px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.destination,
+.right-part,
+.seat-number,
+.fare-price {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.destination-sub-heading {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.proceed-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  background-color: #ff8700;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.5rem 1.5rem;
+  margin-left: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bolder;
+  transition-duration: 0.5s;
+}
+btn:hover {
+  background-color: #6366f1;
+}
