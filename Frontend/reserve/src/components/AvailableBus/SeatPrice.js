@@ -3,7 +3,7 @@ import classes from "../css/SeatPrice.module.css";
 
 export const SeatPrice = () => {
   return (
-    <div>
+    <div className={classes.head}>
       <span className={classes.filter}>
         <input type="radio" />
         <label htmlFor="">All</label>
@@ -31,10 +31,6 @@ export const SeatPrice = () => {
       <span className={classes.filter}>
         <input type="radio" />
         <label htmlFor="">1650</label>
-      </span>
-      <span className={classes.filter}>
-        <input type="radio" />
-        <label htmlFor="">1850</label>
       </span>
     </div>
   );
