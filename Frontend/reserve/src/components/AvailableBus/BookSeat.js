@@ -22,8 +22,10 @@ const BookSeat = () => {
           <div className={classes["bus-seat-flex"]}>
             <SeatLayout seats={seats} />
           </div>
+          <div className={classes["bus-ticket-container"]}>
+            <BusTicket />
+          </div>
         </div>
-        <BusTicket />
       </div>
     </>
   );

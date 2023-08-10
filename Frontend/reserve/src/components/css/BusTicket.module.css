@@ -3,12 +3,11 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 5px 10px;
-  border: 2px solid grey;
-  width: 40%;
-  min-height: 235px;
+  width: 130%;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.87);
+  height: 90vh;
   margin-left: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 15px;
 }
 
 .bus-ticket-heading {
