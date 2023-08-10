@@ -16,7 +16,9 @@ export const Home = (props) => {
         </div>
         <div className={classes.submit}>
           <button className={classes.btn}>
-            <Link to="/available-bus">Search</Link>
+            <Link to="/available-bus" className={classes.link}>
+              Search
+            </Link>
           </button>
         </div>
       </div>

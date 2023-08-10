@@ -37,3 +37,7 @@
   cursor: pointer;
   font-weight: bolder;
 }
+.link {
+  color: #fff;
+  text-decoration: none;
+}

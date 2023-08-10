@@ -60,3 +60,7 @@
 btn:hover {
   background-color: #6366f1;
 }
+.link {
+  color: #fff;
+  text-decoration: none;
+}
