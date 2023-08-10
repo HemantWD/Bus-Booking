@@ -4,6 +4,7 @@ import { Login } from "./Pages/Auth/Login";
 import { Register } from "./Pages/Auth/Register";
 import { AvailableBus } from "./Pages/AvailableBus";
 import { Payment } from "./Pages/Payment";
+import { InfoPage } from "./Pages/InfoPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
         <Route path="/available-bus" Component={AvailableBus} />
+        <Route path="/info-page" Component={InfoPage} />
         <Route path="/payment" Component={Payment} />
       </Routes>
     </>

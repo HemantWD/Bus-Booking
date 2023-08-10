@@ -1,60 +1,3 @@
-/*
-.card {
-  background-color: aqua;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 90%;
-}
-
-.bus {
-  padding: 23px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-.name h2 {
-  /* background-color: aquamarine; 
-  font-size: x-large;
-  margin: 10px 0;
-}
-.name p {
-  color: grey;
-  margin: 5px 0;
-}
-
-.booking {
-  border-left: 1px solid grey;
-  padding-left: 3rem;
-}
-.booking h3 {
-  font-size: 23px;
-}
-.btn {
-  background-color: #ff8700;
-  color: #fff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0.5rem 1.5rem;
-  margin-left: 0.5rem;
-  border-radius: 0.25rem;
-  font-weight: bolder;
-  transition-duration: 0.5s;
-}
-btn:hover {
-  background-color: #6366f1;
-}
-
-.facilities {
-  font-size: 15px;
-}
-.facilities span {
-  margin-right: 35px;
-  font-size: medium;
-  color: grey;
-  cursor: pointer;
-}
-*/
 .busCard {
   width: 100%;
   min-height: 130px;
@@ -101,4 +44,5 @@ btn:hover {
   border-radius: 0.25rem;
   font-weight: bolder;
   transition-duration: 0.5s;
+  cursor: pointer;
 }

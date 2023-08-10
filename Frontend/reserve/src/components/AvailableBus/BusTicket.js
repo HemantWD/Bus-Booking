@@ -1,22 +1,7 @@
 import React from "react";
 import classes from "../css/BusTicket.module.css";
-// import { useNavigate } from "react-router-dom";
 
 const BusTicket = ({ selectedBus }) => {
-  //   const { bus } = selectedBus;
-  //   const { fare } = bus;
-  //   const seats = selectedBus.seletedSeats;
-  //   const mappedSeats =
-  // seats.length === 0 ? "0" : seats.map((el) => el.seatNumber).join(",");
-  //   const price = seats.length === 0 ? 0 : seats.length * fare;
-  //   const navigate = useNavigate();
-  //   const onSubmitHandler = () => {
-  // if (seats.length === 0) {
-  //   return;
-  // }
-  // navigate("/info");
-  //   };
-
   return (
     <div className={classes["bus-ticket-container"]}>
       <div className={classes["bus-ticket-heading"]}>
