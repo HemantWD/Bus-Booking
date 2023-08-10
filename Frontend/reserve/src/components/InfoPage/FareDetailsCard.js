@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "../css/FareDetailsCard.module.css";
+import { Link } from "react-router-dom";
 
 export const FareDetailsCard = () => {
   return (
@@ -22,7 +23,11 @@ export const FareDetailsCard = () => {
           <div className={classes.fare}>Total Price</div>
           <div className={classes.price}>&#8377;899</div>
         </div>
-        <button className={classes.btn}>Proceed to Payment</button>
+        <button className={classes.btn}>
+          <Link to="/payment" className={classes.link}>
+            Proceed to Payment
+          </Link>
+        </button>
       </div>
     </div>
   );

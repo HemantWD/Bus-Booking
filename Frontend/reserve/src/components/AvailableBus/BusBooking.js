@@ -1,42 +1,54 @@
 import React from "react";
 import classes from "../css/BusBooking.module.css";
+import { TiTickOutline } from "react-icons/ti";
+import { BusCardInfo } from "../InfoPage/BusCardInfo";
+import { Link } from "react-router-dom";
 
 export const BusBooking = () => {
+  const bookingTitles = [
+    "Ticket ID:",
+    "Payment ID:",
+    "Passenger Details:",
+    "Contact Details:",
+  ];
+  const bookingValues = [
+    "H3M175",
+    "2545-326E3-7HHH",
+    `Hemant Ajay Sharma, Male , 26 yrs`,
+    `9024082738`,
+  ];
   return (
-    <div className={classes.container}>
-      <div className={classes["payment-booking"]}>
-        <div className={classes.upper}>
-          <div className={classes.icon}>Icon</div>
-          <div className={classes["book-confimed"]}>
-            Booking Confirmed
-            <br />
-            <h4>Happy Journey</h4>
-          </div>
-          <div className={classes.booking}>
-            <div className={classes["booking-details"]}>
-              <div className={classes["left-side-detail"]}>Ticket Id:</div>
-              <div className={classes["right-side-detail"]}>id</div>
-            </div>
-            <div className={classes["booking-details"]}>
-              <div className={classes["left-side-detail"]}>Payment Id:</div>
-              <div className={classes["right-side-detail"]}>200</div>
-            </div>
-            <div className={classes["booking-details"]}>
-              <div className={classes["left-side-detail"]}>
-                Passenger Details
-              </div>
-              <div className={classes["right-side-detail"]}>
-                Hemant Ajay Sharma
-              </div>
-            </div>
-            <div className={classes["booking-details"]}>
-              <div className={classes["left-side-detail"]}>Contact Details</div>
-              <div className={classes["right-side-detail"]}>0141-2722309</div>
-            </div>
-          </div>
-        </div>
-        <div className={classes.lower}>BusCard Left</div>
+    <div className={classes["booking-container"]}>
+      <div className={classes["icon-Container"]}>
+        <TiTickOutline className={classes.icon} />
       </div>
+      <div className={classes["confirmation-text"]}>
+        Booking has been confirmed
+      </div>
+      <div className={classes["details-container"]}>
+        <div className={classes["title-container"]}>
+          {bookingTitles.map((bookingTitle, id) => (
+            <div key={id} className={classes.title}>
+              {bookingTitle}
+            </div>
+          ))}
+        </div>
+        <div className={classes["value-container"]}>
+          {bookingValues.map((bookingValue, id) => (
+            <div key={id} className={classes.title}>
+              {bookingValue}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={classes["busCardInfo-container"]}>
+        <BusCardInfo />
+      </div>
+      <button className={classes.btn}>
+        <Link to="/" className={classes.link}>
+          Go Back Home
+        </Link>
+      </button>
     </div>
   );
 };

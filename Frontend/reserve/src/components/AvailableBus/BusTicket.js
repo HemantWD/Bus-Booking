@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "../css/BusTicket.module.css";
+import { Link } from "react-router-dom";
 
 const BusTicket = ({ selectedBus }) => {
   return (
@@ -56,7 +57,11 @@ const BusTicket = ({ selectedBus }) => {
       </div>
       <br />
       <div className={classes["proceed-btn"]}>
-        <button className={classes.btn}>Proceed To Book</button>
+        <button className={classes.btn}>
+          <Link to="/info-page" className={classes.link}>
+            Proceed To Book
+          </Link>
+        </button>
       </div>
     </div>
   );
