@@ -1,7 +1,8 @@
-const express = require("express");
-const Trip = require("../modal/tripModal");
-const Ticket = require("../modal/ticketModal");
-const busData = require("../modal/busData");
+import express from "express";
+import Trip from "../modal/tripModal.js";
+import Ticket from "../modal/ticketModal.js";
+// const Bus  from "../modal/busModal"
+// import State from "../modal/districtModal.js";
 
 const router = express.Router();
 
@@ -24,22 +25,18 @@ router.get("/trips", (req, res) => {
 });
 
 // GET request to get bus details
-router.get("/busData", (req, res) => {
-  const { From, To, DaysRunOn } = req.query;
-  const daysArray = (DaysRunOn || "").split(",").map((day) => day.trim());
-  busData
-    .find({ From, To, DaysRunOn: { $in: daysArray } })
-    .then((busData) => {
-      res.status(200).json(busData);
+router.get("/districts", (req, res) => {
+  State.find()
+    .then((state_district) => {
+      res.status(200).json(state_district);
     })
-    .catch((err) => {
-      console.error("Failed to Fetch the Data: ", err.message);
+    .catch((error) => {
+      console.log("Failed to fetch : ", error);
       res.status(500).json({
-        message: "Failed to fetch bus data",
+        message: "Failed to fetch districts",
       });
     });
 });
-
 // POST request to post the details to the database
 router.post("/trips", (req, res) => {
   const {
@@ -167,4 +164,4 @@ router.get("/parameter", (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;
