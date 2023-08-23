@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const ticketModal = new mongoose.Schema({
   name: String,
@@ -11,5 +11,4 @@ const ticketModal = new mongoose.Schema({
   busFare: Number,
 });
 
-const Ticket = mongoose.model("Ticket", ticketModal);
-module.exports = Ticket;
+export default mongoose.model("Ticket", ticketModal);
