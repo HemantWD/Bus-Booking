@@ -34,10 +34,16 @@
 }
 
 .btn Button {
-  border: 1px solid black;
-  border-radius: 0;
-  background-color: #000;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ff8700;
   color: white;
   width: 100%;
+  font-weight: 600;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  cursor: pointer;
 }
