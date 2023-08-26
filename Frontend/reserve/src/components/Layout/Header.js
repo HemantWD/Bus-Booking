@@ -3,8 +3,11 @@ import classes from "../css/Header.module.css";
 import { useNavigate } from "react-router-dom";
 import { BsBusFront } from "react-icons/bs";
 
-export const Header = (props) => {
+export const Header = () => {
+  // const [auth, setAuth] = useState();
+
   const navigate = useNavigate();
+
   const handleOnclick = () => {
     navigate("/login");
   };
@@ -15,7 +18,9 @@ export const Header = (props) => {
     <nav className={classes.navbar}>
       <ul>
         <BsBusFront />
-        <li className={classes.brand}>Reserve</li>
+        <a className={classes.brand} href="/">
+          Reserve
+        </a>
         <li>
           <a href="/">Ticket</a>
         </li>
@@ -24,11 +29,11 @@ export const Header = (props) => {
         </li>
       </ul>
       <ul>
-        <button className={classes.btn} onClick={handleOnclick}>
-          Login
-        </button>
         <button className={classes.btn} onClick={handleClick}>
           Register
+        </button>
+        <button className={classes.btn} onClick={handleOnclick}>
+          Login
         </button>
       </ul>
     </nav>
