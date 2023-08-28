@@ -30,8 +30,13 @@ export const About = (props) => {
         <h1>India's Fastest Bus Service</h1>
       </div>
       <div className={classes.card}>
-        {dummyData.map((value) => (
-          <Card image={value.image} title={value.title} text={value.text} />
+        {dummyData.map((value, index) => (
+          <Card
+            image={value.image}
+            key={index}
+            title={value.title}
+            text={value.text}
+          />
         ))}
       </div>
     </div>
