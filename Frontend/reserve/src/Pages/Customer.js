@@ -29,7 +29,7 @@ export const Customer = () => {
       <h1>Here's what a few of our customers have to say about us </h1>
       <div className={classes["cards-container"]}>
         {data.map((value, index) => (
-          <div className={classes.card}>
+          <div className={classes.card} key={index}>
             <div className={classes.image}>
               <img src={value.image} alt="profile" />
             </div>

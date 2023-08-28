@@ -15,7 +15,7 @@ const BusTicket = ({ selectedBus }) => {
         <div className={classes["left-part"]}>
           <p className={classes.destination}>Ahmedabad</p>
           <p className={classes["destination-sub-heading"]}>
-            Taxi Stand, Mughal Road
+            Taxi Stand, Mughal Roaddd
           </p>
         </div>
         <div className={classes["right-part"]}>

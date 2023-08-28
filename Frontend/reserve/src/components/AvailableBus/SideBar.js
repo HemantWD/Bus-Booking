@@ -51,11 +51,11 @@ function renderCheckbox(label) {
 }
 function renderRadio(id, label) {
   return (
-    <>
+    <div key={id}>
       <input type="radio" name={id} />
       <label htmlFor={id}>{label}</label>
       <br />
-    </>
+    </div>
   );
 }
 
@@ -70,10 +70,14 @@ export const SideBar = () => {
         <div className={classes.filter}>
           <form>
             <h2>Departure Time</h2>
-            {departureSessions.map((value) => renderCheckbox(value))}
+            {departureSessions.map((value, index) =>
+              renderCheckbox(value, index)
+            )}
             <hr />
             <h2>Arrival Time</h2>
-            {arrivalSessions.map((value) => renderCheckbox(value))}
+            {arrivalSessions.map((value, index) =>
+              renderCheckbox(value, index)
+            )}
             <hr />
             <h2>Pickup Point</h2>
             <input type="text" />
@@ -85,10 +89,10 @@ export const SideBar = () => {
             {dropPoints.map((value) => renderRadio(value.id, value.label))}
             <hr />
             <h2>Bus Rating</h2>
-            {busRatings.map((value) => renderCheckbox(value))}
+            {busRatings.map((value, index) => renderCheckbox(value, index))}
             <hr />
             <h2>Bus Operator</h2>
-            {busOperators.map((value) => renderCheckbox(value))}
+            {busOperators.map((value, index) => renderCheckbox(value, index))}
           </form>
         </div>
       </div>

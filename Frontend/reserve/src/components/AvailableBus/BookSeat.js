@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "../css/BookSeat.module.css";
 import { SeatPrice } from "./SeatPrice";
 import { SeatLayout } from "./SeatLayout";
-import data from "../../redux/sample";
 import BusTicket from "./BusTicket";
 
 const BookSeat = () => {
-  const { seats } = data[0];
   return (
     <>
       <div className={classes["bus-seats"]}>
@@ -20,7 +18,7 @@ const BookSeat = () => {
         </div>
         <div className={classes["main-container"]}>
           <div className={classes["bus-seat-flex"]}>
-            <SeatLayout seats={seats} />
+            <SeatLayout />
           </div>
           <div className={classes["bus-ticket-container"]}>
             <BusTicket />
