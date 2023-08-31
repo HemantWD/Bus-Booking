@@ -1,8 +1,18 @@
 import React from "react";
 import classes from "../css/BusTicket.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import data from "../../redux/sample";
 
-const BusTicket = ({ selectedBus }) => {
+const BusTicket = () => {
+  const selectedSeats = useSelector((state) => state.seat);
+  const totalAmount = selectedSeats.reduce((total, seat) => {
+    const seatInfo = data[0].seats.upper.find(
+      (s) => s.seatNumber === seat.seatNumber
+    );
+    return total + seatInfo.price;
+  }, 0);
+
   return (
     <div className={classes["bus-ticket-container"]}>
       <div className={classes["bus-ticket-heading"]}>
@@ -37,7 +47,9 @@ const BusTicket = ({ selectedBus }) => {
       </div>
       <div className={`${classes["seat-number"]} ${classes["d-flex"]}`}>
         <p>Seat No.</p>
-        <p>mappedSeats</p>
+        {selectedSeats.map((seat) => (
+          <p key={seat.seatNumber}>{seat.seatNumber}</p>
+        ))}
       </div>
       <div className={classes["fare-details"]}>
         <div className={classes["bus-ticket-heading"]}>
@@ -51,7 +63,7 @@ const BusTicket = ({ selectedBus }) => {
             </p>
           </div>
           <div className={classes["fare-price"]}>
-            <p>INR price</p>
+            <p>INR {totalAmount} </p>
           </div>
         </div>
       </div>

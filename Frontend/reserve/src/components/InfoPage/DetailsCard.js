@@ -8,7 +8,7 @@ export const DetailsCard = () => {
 
   return (
     <div className={classes.detailsCard}>
-      <div className={classes.passengerInfo}>
+      <form className={classes.passengerInfo}>
         <div className={classes.passengerTitle}>
           <span>Passenger 1</span>
           <span className={classes.seatNumber}>Seat 16</span>
@@ -65,7 +65,7 @@ export const DetailsCard = () => {
             />
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
