@@ -3,8 +3,11 @@ import classes from "../css/BusBooking.module.css";
 import { TiTickOutline } from "react-icons/ti";
 import { BusCardInfo } from "../InfoPage/BusCardInfo";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const BusBooking = () => {
+  const formData = useSelector((state) => state.passenger);
+
   const bookingTitles = [
     "Ticket ID:",
     "Payment ID:",

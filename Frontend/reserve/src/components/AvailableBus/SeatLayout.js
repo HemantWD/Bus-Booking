@@ -13,11 +13,11 @@ export const SeatLayout = () => {
       (seat) => seat.seatNumber === seatNumber
     );
     if (isSelected) {
-      dispatch(deselectSeat({ seatNumber }));
+      dispatch(deselectSeat({}));
     } else {
       dispatch(selectedSeat({ seatNumber, id }));
     }
-    console.log(isSelected);
+    console.log(seatNumber);
   };
 
   return (
@@ -36,7 +36,9 @@ export const SeatLayout = () => {
                 ? "green"
                 : "",
             }}
-          >{`${seat.seatNumber}`}</div>
+          >
+            {seat.seatNumber}
+          </div>
         ))}
       </div>
       <h2 className={classes["seat-position"]}>Lower Seat</h2>
@@ -54,7 +56,7 @@ export const SeatLayout = () => {
                 : "",
             }}
           >
-            {`${seat.seatNumber}`}
+            {seat.seatNumber}
           </div>
         ))}
       </div>
