@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "../css/SeatLayout.module.css";
 import { selectedSeat, deselectSeat } from "../../redux/seatSlice";
 import { useDispatch, useSelector } from "react-redux";
 import data from "../../redux/sample";
@@ -21,14 +20,16 @@ export const SeatLayout = () => {
   };
 
   return (
-    <div className={classes["seat-section"]}>
-      <h2>Upper Seat</h2>
-      <div className={classes.seats}>
+    <div className=" w-96 shadow-lg shadow-slate-700 p-4 m-4 rounded-2xl">
+      <h2 className="font-serif text-center text-lg font-bold py-4 px-0">
+        Upper Seat
+      </h2>
+      <div className=" gap-3 grid grid-cols-7">
         {data[0].seats.upper.map((seat) => (
           <div
             key={seat.seatNumber}
             onClick={() => handleClick(seat.seatNumber, data[0]._id)}
-            className={classes.seating}
+            className=" flex justify-center items-center w-10 cursor-pointer border-2 border-gray-400 rounded-xl h-6 "
             style={{
               backgroundColor: selectedSeats.some(
                 (selectedSeat) => selectedSeat.seatNumber === seat.seatNumber
@@ -41,13 +42,15 @@ export const SeatLayout = () => {
           </div>
         ))}
       </div>
-      <h2 className={classes["seat-position"]}>Lower Seat</h2>
-      <div className={classes.seats}>
+      <h2 className="font-serif text-center text-lg font-bold py-4 px-0">
+        Lower Seat
+      </h2>
+      <div className="gap-3 grid grid-cols-7">
         {data[0].seats.lower.map((seat) => (
           <div
             key={seat.seatNumber}
             onClick={() => handleClick(seat.seatNumber, data[0]._id)}
-            className={classes.seating}
+            className="flex justify-center items-center w-10 cursor-pointer border-2 border-gray-400 rounded-xl h-6"
             style={{
               backgroundColor: selectedSeats.some(
                 (selectedSeat) => selectedSeat.seatNumber === seat.seatNumber

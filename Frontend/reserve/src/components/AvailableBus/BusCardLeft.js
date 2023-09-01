@@ -1,37 +1,38 @@
 import React from "react";
-import classes from "../css/BusCardLeft.module.css";
 
 export const BusCardLeft = () => {
   return (
-    <div className={classes["bus-card-left"]}>
-      <div className={classes["bus-card-heading"]}>
-        <div className={classes["bus-heading"]}>
-          <h2>InterCity Smart Bus </h2>
-          <div className={classes["bus-rating"]}>4.2</div>
+    <div className=" w-4/5 flex flex-col justify-between py-3 px-5">
+      <div>
+        <div className="flex items-center text-xl">
+          <h2 className="font-serif text-center text-lg font-bold">
+            InterCity Smart Bus{" "}
+          </h2>
+          <div className="bg-green-600 border rounded-md w-10 h-5 text-sm ml-4 font-normal text-center text-white">
+            4.2
+          </div>
         </div>
-        <div className={classes["bus-details"]}>
-          <h3>AC Seater / Sleeper</h3>
+        <div>
+          <h3 className=" text-lg font-medium">AC Seater / Sleeper</h3>
         </div>
       </div>
-      <div className={classes.itenary}>
-        <h3>
-          <span className={classes.point}>15:40 PM</span>
+      <div>
+        <h3 className=" text-lg font-medium">
+          <span>15:40 PM</span>
           <span>
             ---- {""} Hrs {} Min's ----{" "}
           </span>
-          <span className={classes.point}>08:00 AM</span>
+          <span>08:00 AM</span>
         </h3>
       </div>
-      <div className={classes["bus-actions"]}>
-        <div className="bus-facility">
-          <span>Live Tracking</span>
-          <span>Policies</span>
-          <span>Amenities</span>
-          <span>Bus Photos</span>
-          <span>Booking Polcies</span>
-          <span>Reviews</span>
-          <span>Rest Stop</span>
-        </div>
+      <div className=" font-light cursor-pointer">
+        <span className="mr-9">Live Tracking</span>
+        <span className="mr-9">Policies</span>
+        <span className="mr-9">Amenities</span>
+        <span className="mr-9">Bus Photos</span>
+        <span className="mr-9">Booking Polcies</span>
+        <span className="mr-9">Reviews</span>
+        <span className="mr-9">Rest Stop</span>
       </div>
     </div>
   );
