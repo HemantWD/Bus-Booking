@@ -3,17 +3,16 @@ import { Header } from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
 import { SideBar } from "../components/AvailableBus/SideBar";
 import { BusList } from "../components/AvailableBus/BusList";
-import classes from "./styles/AvailableBus.module.css";
 
 export const AvailableBus = () => {
   return (
     <>
       <Header />
-      <div className={classes.container}>
-        <div className={classes.sidebar}>
+      <div className="flex justify-around items-start">
+        <div className="flex flex-col">
           <SideBar />
         </div>
-        <div className={classes.availablebus}>
+        <div className="flex flex-col items-center w-full">
           <BusList />
           <BusList />
           <BusList />

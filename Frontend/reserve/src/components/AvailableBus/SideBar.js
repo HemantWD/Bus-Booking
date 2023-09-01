@@ -1,6 +1,5 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
-import classes from "../css/SideBar.module.css";
 
 const departureSessions = [
   "Morning Session",
@@ -62,12 +61,16 @@ function renderRadio(id, label) {
 export const SideBar = () => {
   return (
     <>
-      <div className={classes.container}>
-        <div className={classes.heading}>
-          <h4>Filter</h4>
-          <h4>Clear All</h4>
+      <div className="m-auto py-5 px-8 w-72">
+        <div className="font-bold text-orange-400 border-2 border-gray-500 rounded-lg flex justify-between p-5 mb-5">
+          <h4 className="cursor-pointer font-serif text-lg font-bold mb-2.5">
+            Filter
+          </h4>
+          <h4 className="cursor-pointer font-serif text-lg font-bold mb-2.5">
+            Clear Alll
+          </h4>
         </div>
-        <div className={classes.filter}>
+        <div className="filter">
           <form>
             <h2>Departure Time</h2>
             {departureSessions.map((value, index) =>
