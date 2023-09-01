@@ -1,5 +1,4 @@
 import React from "react";
-import { BsSearch } from "react-icons/bs";
 
 const departureSessions = [
   "Morning Session",
@@ -43,7 +42,9 @@ function renderCheckbox(label) {
   return (
     <>
       <input type="checkbox" name={label} />
-      <label htmlFor={label}>{label}</label>
+      <label className="ml-4" htmlFor={label}>
+        {label}
+      </label>
       <br />
     </>
   );
@@ -52,7 +53,9 @@ function renderRadio(id, label) {
   return (
     <div key={id}>
       <input type="radio" name={id} />
-      <label htmlFor={id}>{label}</label>
+      <label className="ml-4" htmlFor={id}>
+        {label}
+      </label>
       <br />
     </div>
   );
@@ -67,34 +70,47 @@ export const SideBar = () => {
             Filter
           </h4>
           <h4 className="cursor-pointer font-serif text-lg font-bold mb-2.5">
-            Clear Alll
+            Clear All
           </h4>
         </div>
-        <div className="filter">
+        <div className="border-2 border-gray-500 rounded-lg p-5">
           <form>
-            <h2>Departure Time</h2>
+            <h2 className="font-serif text-center text-lg font-bold">
+              Departure Time
+            </h2>
             {departureSessions.map((value, index) =>
               renderCheckbox(value, index)
             )}
             <hr />
-            <h2>Arrival Time</h2>
+            <h2 className="font-serif text-center text-lg font-bold">
+              Arrival Time
+            </h2>
             {arrivalSessions.map((value, index) =>
               renderCheckbox(value, index)
             )}
             <hr />
-            <h2>Pickup Point</h2>
-            <input type="text" />
-            <BsSearch />
-            <br />
+            <h2 className="font-serif text-center text-lg font-bold">
+              Pickup Point
+            </h2>
+            <input
+              type="text"
+              className="border-2 rounded-lg border-gray-400"
+            />
             {pickupPoints.map((value) => renderRadio(value.id, value.label))}
             <hr />
-            <h2>Drop Point</h2>
+            <h2 className="font-serif text-center text-lg font-bold">
+              Drop Point
+            </h2>
             {dropPoints.map((value) => renderRadio(value.id, value.label))}
             <hr />
-            <h2>Bus Rating</h2>
+            <h2 className="font-serif text-center text-lg font-bold">
+              Bus Rating
+            </h2>
             {busRatings.map((value, index) => renderCheckbox(value, index))}
             <hr />
-            <h2>Bus Operator</h2>
+            <h2 className="font-serif text-center text-lg font-bold">
+              Bus Operator
+            </h2>
             {busOperators.map((value, index) => renderCheckbox(value, index))}
           </form>
         </div>

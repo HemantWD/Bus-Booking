@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "../css/BusTicket.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import data from "../../redux/sample";
@@ -14,63 +13,54 @@ const BusTicket = () => {
   }, 0);
 
   return (
-    <div className={classes["bus-ticket-container"]}>
-      <div className={classes["bus-ticket-heading"]}>
-        <h3 className={classes.heading}>Boarding and Dropping</h3>
+    <div className="flex flex-col justify-between py-1 px-3 w-full shadow-lg shadow-slate-600 ml-6 rounded-2xl">
+      <div className=" text-lg font-semibold text-center">
+        <h3 className="text-lg font-bold">Boarding and Dropping</h3>
       </div>
       <br />
-      <div
-        className={`${classes["bus-ticket-destination"]} ${classes["d-flex"]}`}
-      >
-        <div className={classes["left-part"]}>
-          <p className={classes.destination}>Ahmedabad</p>
-          <p className={classes["destination-sub-heading"]}>
-            Taxi Stand, Mughal Roaddd
-          </p>
+      <div className="flex justify-between">
+        <div className="">
+          <p className=" text-lg font-medium ">Ahmedabad</p>
+          <p className=" text-base">Taxi Stand, Mughal Roaddd</p>
         </div>
-        <div className={classes["right-part"]}>
-          <p></p>
+        <div className=" text-lg font-medium">
+          <p>18:00 hrs</p>
         </div>
       </div>
-      <div
-        className={`${classes["bus-ticket-destination"]} ${classes["d-flex"]}`}
-      >
-        <div className={classes["left-part"]}>
-          <p className={classes.destination}>Jaipur </p>
-          <p className={classes["destination-sub-heading"]}>
-            Taxi Stand, Mughal Road
-          </p>
+      <div className="flex justify-between mt-1">
+        <div className="">
+          <p className="text-lg font-medium">Jaipur </p>
+          <p className="text-base">Sindhi Camp, Polo Victory</p>
         </div>
-        <div className={classes["right-part"]}>
-          <p>08:00 AM</p>
+        <div className=" text-lg font-medium">
+          <p>08:00 hrs</p>
         </div>
       </div>
-      <div className={`${classes["seat-number"]} ${classes["d-flex"]}`}>
+      <div className="flex justify-between text-lg font-medium">
         <p>Seat No.</p>
         {selectedSeats.map((seat) => (
-          <p key={seat.seatNumber}>{seat.seatNumber}</p>
+          <p className=" text-base" key={seat.seatNumber}>
+            {seat.seatNumber}
+          </p>
         ))}
       </div>
-      <div className={classes["fare-details"]}>
-        <div className={classes["bus-ticket-heading"]}>
+      <div className="fare-details">
+        <div className="text-lg font-semibold text-center">
           <p>Fare Details</p>
         </div>
-        <div className={`${classes["fare"]} ${classes["d-flex"]}`}>
-          <div className={classes["fare-amount"]}>
-            <p className={classes.destination}>Amount</p>
-            <p className={classes["destination-sub-heading"]}>
-              Taxi Stand, Mughal Road
-            </p>
+        <div className="flex justify-between">
+          <div className="fare-amount">
+            <p className=" text-lg font-medium">Amount</p>
           </div>
-          <div className={classes["fare-price"]}>
+          <div className=" text-lg font-medium">
             <p>INR {totalAmount} </p>
           </div>
         </div>
       </div>
       <br />
-      <div className={classes["proceed-btn"]}>
-        <button className={classes.btn}>
-          <Link to="/info-page" className={classes.link}>
+      <div className=" flex justify-center mb-5">
+        <button className="rounded text-white bg-orange-600 font-bold py-2 px-6 ml-2 hover:bg-indigo-500 duration-500">
+          <Link to="/info-page" className="link">
             Proceed To Book
           </Link>
         </button>

@@ -12,7 +12,7 @@ export const AvailableBus = () => {
         <div className="flex flex-col">
           <SideBar />
         </div>
-        <div className="flex flex-col items-center w-full">
+        <div className="flex flex-col items-center w-full mt-5">
           <BusList />
           <BusList />
           <BusList />
