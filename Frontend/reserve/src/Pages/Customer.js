@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./styles/Customer.module.css";
 import profile from "../assets/profile.png";
 
 const data = [
@@ -25,18 +24,23 @@ const data = [
 
 export const Customer = () => {
   return (
-    <div className={classes.heading}>
-      <h1>Here's what a few of our customers have to say about us </h1>
-      <div className={classes["cards-container"]}>
+    <div className="bg-slate-200 h-auto">
+      <p className="text-3xl text-center mt-2 p-2.5 font-bold font-serif">
+        Here's what a few of our customers have to say about us
+      </p>
+      <div className="flex justify-around flex-nowrap p-5">
         {data.map((value, index) => (
-          <div className={classes.card} key={index}>
-            <div className={classes.image}>
-              <img src={value.image} alt="profile" />
+          <div
+            className="w-80 bg-white border rounded-lg p-5 flex flex-row items-center shadow-xl shadow-slate-500"
+            key={index}
+          >
+            <div className="relative mb-5">
+              <img src={value.image} className="w-32 h-28" alt="profile" />
             </div>
-            <div className={classes.info}>
-              <h3 className={classes.name}>{value.name}</h3>
-              <h6>{value.details}</h6>
-              <p className={classes.review}>{value.review}</p>
+            <div className="text-center">
+              <p className="mb-2.5 text-xl font-bold">{value.name}</p>
+              <p className="-mt-2 text-xs">{value.details}</p>
+              <p className="mt-2 text-sm font-semibold">{value.review}</p>
             </div>
           </div>
         ))}
