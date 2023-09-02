@@ -41,7 +41,7 @@ npm start
 ## Usage
 To use Reserve Bus, follow these steps:
 ```bash
-1. Visit `https://reserve-bus-book.netlify.app/` in your web browser
+1. Visit :-  https://reserve-bus-book-hemant.netlify.app/
 2. Select your destination, date, and time
 3. Choose your seat and make the payment
 4. You will receive a confirmation message with your reservation details
