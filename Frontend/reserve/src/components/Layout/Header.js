@@ -35,7 +35,7 @@ export const Header = () => {
           </a>
         </li>
         <li className="mr-2.5">
-          <a className="mx-2.5" href="/">
+          <a className="mx-2.5" href="#contact">
             Contact Us
           </a>
         </li>

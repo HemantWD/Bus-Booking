@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "../css/BusBooking.module.css";
 import { TiTickOutline } from "react-icons/ti";
 import { BusCardInfo } from "../InfoPage/BusCardInfo";
 import { Link } from "react-router-dom";
@@ -21,36 +20,34 @@ export const BusBooking = () => {
     `9024082738`,
   ];
   return (
-    <div className={classes["booking-container"]}>
-      <div className={classes["icon-Container"]}>
-        <TiTickOutline className={classes.icon} />
+    <div className=" px-64 border-4 border-gray-600 rounded-md shadow-lg shadow-slate-600">
+      <div className=" mt-4 text-6xl text-green-800 flex items-center justify-center">
+        <TiTickOutline className=" border-2 border-green-800 rounded-full" />
       </div>
-      <div className={classes["confirmation-text"]}>
+      <div className=" pb-4 text-2xl font-bold text-center">
         Booking has been confirmed
       </div>
-      <div className={classes["details-container"]}>
-        <div className={classes["title-container"]}>
+      <div className=" flex justify-center text-gray-500 ">
+        <div className="mx-2 text-right">
           {bookingTitles.map((bookingTitle, id) => (
-            <div key={id} className={classes.title}>
+            <div key={id} className=" mb-2">
               {bookingTitle}
             </div>
           ))}
         </div>
-        <div className={classes["value-container"]}>
+        <div className=" mx-2 text-right">
           {bookingValues.map((bookingValue, id) => (
-            <div key={id} className={classes.title}>
+            <div key={id} className=" mb-2">
               {bookingValue}
             </div>
           ))}
         </div>
       </div>
-      <div className={classes["busCardInfo-container"]}>
+      <div className=" mb-2">
         <BusCardInfo />
       </div>
-      <button className={classes.btn}>
-        <Link to="/" className={classes.link}>
-          Go Back Home
-        </Link>
+      <button className=" mb-8 rounded text-white bg-orange-600 font-bold py-2 px-6 ml-2 hover:bg-indigo-500 duration-500">
+        <Link to="/">Go Back Home</Link>
       </button>
     </div>
   );

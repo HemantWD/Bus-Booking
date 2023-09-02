@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./styles/InfoPage.module.css";
 import { Header } from "../components/Layout/Header";
 import Footer from "../components/Layout/Footer";
 import { BusCardInfo } from "../components/InfoPage/BusCardInfo";
@@ -10,10 +9,12 @@ export const InfoPage = () => {
   return (
     <>
       <Header />
-      <div className={classes["info-page"]}>
-        <div className={classes["bus-info-card"]}>
+      <div className=" flex mx-10 mb-8 mt-20">
+        <div className="mr-5">
           <BusCardInfo />
-          <div className={classes["travel-details"]}>Enter travel details</div>
+          <div className=" mb-4 mt-8 text-xl font-bold text-left ">
+            Enter travel details
+          </div>
           <DetailsCard />
         </div>
         <FareDetailsCard />

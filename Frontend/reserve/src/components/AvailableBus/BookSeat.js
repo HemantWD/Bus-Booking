@@ -16,10 +16,10 @@ const BookSeat = () => {
           </div>
         </div>
         <div className="w-full flex py-3 px-0">
-          <div className="">
+          <div className="w-2/4">
             <SeatLayout />
           </div>
-          <div className="">
+          <div className="mt-3">
             <BusTicket />
           </div>
         </div>
