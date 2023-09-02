@@ -20,7 +20,7 @@ export const SeatLayout = () => {
   };
 
   return (
-    <div className=" w-96 shadow-lg shadow-slate-700 p-4 m-4 rounded-2xl">
+    <div className=" w-full shadow-lg shadow-slate-700 p-4 m-4 rounded-2xl">
       <h2 className="font-serif text-center text-lg font-bold py-4 px-0">
         Upper Seat
       </h2>

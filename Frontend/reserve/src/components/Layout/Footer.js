@@ -4,7 +4,10 @@ import { BsFacebook, BsInstagram } from "react-icons/bs";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gray-500 relative p-5 flex h-auto justify-between">
+      <footer
+        id="contact"
+        className="bg-gray-500 relative p-5 flex h-auto justify-between"
+      >
         <div className="w-2/5">
           <h4 className="font-serif text-lg font-bold mb-2.5">RESERVE</h4>
           <p>Where you have a choice. Choose Reserve</p>

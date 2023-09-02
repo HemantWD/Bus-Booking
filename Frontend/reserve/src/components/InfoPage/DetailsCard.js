@@ -1,33 +1,38 @@
 import React from "react";
-import classes from "../css/DetailsCard.module.css";
+import { useSelector } from "react-redux";
 
 export const DetailsCard = () => {
+  const selectedSeats = useSelector((state) => state.seat);
   const handleChange = (event) => {
     event.preventDefault();
   };
 
   return (
-    <div className={classes.detailsCard}>
-      <form className={classes.passengerInfo}>
-        <div className={classes.passengerTitle}>
+    <div className=" border-2 border-gray-700 rounded-md">
+      <form className=" p-4 text-left">
+        <div className=" font-bold">
           <span>Passenger 1</span>
-          <span className={classes.seatNumber}>Seat 16</span>
+          {selectedSeats.map((seat) => (
+            <span className="ml-3 font-normal" key={seat.seatNumber}>
+              Seat {seat.seatNumber}{" "}
+            </span>
+          ))}
         </div>
-        <div className={classes.inputContainer}>
-          <div className={classes.inputField}>
-            <label className={classes.label}>Name</label>
+        <div className="flex items-center justify-around">
+          <div className=" py-2">
+            <label className=" text-gray-600">Name</label>
             <input
               type="text"
-              className={classes.input}
+              className=" block relative flex-auto py-2 px-3 m-3 my-2 border-2 border-gray-400 rounded w-80 text-base font-normal bg-clip-padding "
               onChange={handleChange}
               name="name"
             />
           </div>
-          <div className={classes.inputField}>
-            <label className={classes.label}>Gender</label>
+          <div className="py-2">
+            <label className=" text-gray-600">Gender</label>
             <select
               name="gender"
-              className={classes.input}
+              className=" block relative flex-auto py-2 px-3 m-3 my-2 border-2 border-gray-400 rounded w-40 text-base font-normal bg-clip-padding"
               onChange={handleChange}
             >
               <option value=""></option>
@@ -35,31 +40,31 @@ export const DetailsCard = () => {
               <option value="female">Female</option>
             </select>
           </div>
-          <div className={classes.inputField}>
-            <label className={classes.label}>Age (in yrs)</label>
+          <div className="py-2">
+            <label className="text-gray-600">Age (in yrs)</label>
             <input
               type="number"
-              className={classes.input}
+              className=" block relative flex-auto py-2 px-3 m-3 my-2 border-2 border-gray-400 rounded w-36 text-base font-normal bg-clip-padding"
               onChange={handleChange}
               name="age"
             />
           </div>
         </div>
-        <div className={classes.inputContainer}>
-          <div className={classes.inputField}>
-            <label className={classes.label}>Email</label>
+        <div className="flex items-center justify-around">
+          <div className=" py-2">
+            <label className="text-gray-600">Email</label>
             <input
               type="email"
-              className={classes.input}
+              className="block relative flex-auto py-2 px-3 m-3 my-2 border-2 border-gray-400 rounded w-80 text-base font-normal bg-clip-padding"
               onChange={handleChange}
               name="email"
             />
           </div>
-          <div className={classes.inputField}>
-            <label className={classes.label}>Mobile No</label>
+          <div className=" py-2">
+            <label className=" text-gray-600">Mobile No</label>
             <input
               type="text"
-              className={classes.input}
+              className="block relative flex-auto py-2 px-3 m-3 my-2 border-2 border-gray-400 rounded w-80 text-base font-normal bg-clip-padding"
               onChange={handleChange}
               name="mobileNo"
             />

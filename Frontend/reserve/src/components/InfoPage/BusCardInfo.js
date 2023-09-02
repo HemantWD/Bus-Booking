@@ -1,45 +1,40 @@
 import React from "react";
-import classes from "../css/BusCardInfo.module.css";
 
 export const BusCardInfo = () => {
   return (
     <div>
-      <div className={classes["bus-information"]}>
-        <div className={classes["bus-header"]}>
-          <div className={classes["bus-name"]}>
-            <div className={classes["bus-title"]}>
-              <span className={classes["bus-name-text"]} id="busName">
+      <div className=" border-2 border-gray-600 rounded-md">
+        <div className=" p-4 text-left">
+          <div className=" flex">
+            <div className=" font-bold">
+              <span className=" text-xl" id="busName">
                 Mumbai
               </span>
-              <span className={classes["bus-rating"]}>
+              <span className=" p-1 ml-2 rounded-md bg-green-700 text-white">
                 <ion-icon name="star-outline"></ion-icon>5 star
               </span>
-              <span className={classes["bus-rating-text"]}>Ratings</span>
+              <span className=" px-2 text-xs text-gray-400">Ratings</span>
             </div>
-            <div className={classes["bus-type"]}>
+            <div className=" flex py-2 text-sm">
               <div>
-                <span className={classes["bus-type-text"]}>
-                  AC Sleeper (2-1)
-                </span>
+                <span className=" pr-2 border-r">AC Sleeper (2-1)</span>
               </div>
             </div>
-            <div className={classes["bus-timing"]}>
-              <div>
-                <span className={classes["from-time"]} id="fromTime">
-                  18:30 PM <br />
-                  <span style={{ fontSize: "15px", fontWeight: "400" }}>
-                    09Aug2023
-                  </span>
+            <div className=" flex py-2">
+              <span className=" pr-2 text-lg font-semibold" id="fromTime">
+                18:30 PM <br />
+                <span style={{ fontSize: "15px", fontWeight: "400" }}>
+                  09Aug2023
                 </span>
-              </div>
+              </span>
             </div>
-            <div>
-              <span className={classes["bus-time-interval"]}>
+            <div className="flex py-2">
+              <span className=" px-2 text-center align-middle">
                 ---------- 12:30 hr ---------
               </span>
             </div>
-            <div>
-              <span className={classes["to-time"]} id="toTime">
+            <div className="flex py-2">
+              <span className=" pr-2 text-lg font-semibold" id="toTime">
                 06:30 AM <br />
                 <span style={{ fontSize: "15px", fontWeight: "400" }}>
                   09Aug2023
@@ -47,20 +42,20 @@ export const BusCardInfo = () => {
               </span>
             </div>
           </div>
-          <div className={classes["bus-locations"]}>
-            <div className={classes["from-location"]}>
-              <div className={classes.state} id="fromLocation">
+          <div className=" flex items-center justify-around my-2">
+            <div className="text-sm">
+              <div className=" text-xl font-semibold" id="fromLocation">
                 Maharashtra
               </div>
-              <div className={classes.address}>
+              <div className="text-gray-500 w-4/6">
                 Taxi Stand, Chhatrapati road
               </div>
             </div>
-            <div className={classes["from-location"]}>
-              <div className={classes.state} id="toLocation">
+            <div className="text-sm">
+              <div className="text-xl font-semibold" id="toLocation">
                 Rajasthan
               </div>
-              <div className={classes.address}>
+              <div className=" text-gray-500 w-4/6">
                 Taxi Stand, Chhatrapati road
               </div>
             </div>

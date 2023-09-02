@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import classes from "./Register.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../components/Layout/Header";
+import Footer from "../../components/Layout/Footer";
 
 export const Register = () => {
   const [name, setName] = useState("");
@@ -34,69 +35,79 @@ export const Register = () => {
   };
 
   return (
-    <div className={classes.container}>
-      <form onSubmit={handleSubmit}>
-        <h4 className={classes.title}>Register Page</h4>
-        <div>
+    <>
+      <Header />
+      <div className="flex items-center justify-center h-screen flex-col bg-orange-100 bg-gradient-to-r from-orange-200 to-orange-900">
+        <form
+          className="shadow-lg rounded-lg shadow-zinc-900 p-5 w-2/4 bg-white"
+          onSubmit={handleSubmit}
+        >
+          <h4 className=" text-center text-3xl font-bold mb-4">
+            Register Page
+          </h4>
           <input
             type="text"
             value={name}
+            className="mt-1 block px-3 py-2 border border-slate-300 rounded-md shadow-sm w-full text-2xl focus:outline-none focus:border-sky-500 focus:ring- focus:ring-sky-500 "
             onChange={(e) => {
               setName(e.target.value);
             }}
             placeholder="Enter Your Name"
             required
           />
-        </div>
-        <div>
+
           <input
             type="email"
             value={email}
+            className="mt-1 block px-3 py-2 border border-slate-300 rounded-md shadow-sm w-full text-2xl focus:outline-none focus:border-sky-500 focus:ring- focus:ring-sky-500 "
             onChange={(e) => {
               setEmail(e.target.value);
             }}
             placeholder="Enter Your Email"
             required
           />
-        </div>
-        <div>
           <input
             type="password"
             value={password}
+            className="mt-1 block px-3 py-2 border border-slate-300 rounded-md shadow-sm w-full text-2xl focus:outline-none focus:border-sky-500 focus:ring- focus:ring-sky-500 "
             onChange={(e) => {
               setPassword(e.target.value);
             }}
             placeholder="Enter Your Password"
             required
           />
-        </div>
-        <div>
           <input
             type="number"
             value={phone}
+            className="mt-1 block px-3 py-2 border border-slate-300 rounded-md shadow-sm w-full text-2xl focus:outline-none focus:border-sky-500 focus:ring- focus:ring-sky-500 "
             onChange={(e) => {
               setPhone(e.target.value);
             }}
             placeholder="Enter Phone Number"
             required
           />
-        </div>
-        <div>
           <input
             type="text"
             value={address}
+            className="mt-1 block px-3 py-2 border border-slate-300 rounded-md shadow-sm w-full text-2xl focus:outline-none focus:border-sky-500 focus:ring- focus:ring-sky-500 "
             onChange={(e) => {
               setAddress(e.target.value);
             }}
             placeholder="Enter Your Address"
             required
           />
-        </div>
-        <div className={classes.btn}>
-          <button type="submit">Register</button>
-          <ToastContainer />
-        </div>
-      </form>
-    </div>
+          <div className="flex justify-center mt-4">
+            <button
+              type="submit"
+              className="rounded text-white bg-orange-600 font-bold py-2 px-6 ml-2 hover:bg-indigo-500 duration-500 w-2/5"
+            >
+              Register
+            </button>
+            <ToastContainer />
+          </div>
+        </form>
+      </div>
+      <Footer />
+    </>
   );
 };
