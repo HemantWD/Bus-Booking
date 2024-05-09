@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 // Schema for validation of data before inserting the data into MongoDB Database
 const busDataSchema = new mongoose.Schema({
@@ -44,5 +44,4 @@ const busDataSchema = new mongoose.Schema({
   },
 });
 
-const busData = mongoose.model("BusData", busDataSchema);
-module.exports = busData;
+export default mongoose.model("BusData", busDataSchema);

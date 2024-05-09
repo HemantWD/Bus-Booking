@@ -3,8 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Header } from "../../components/Layout/Header";
-import Footer from "../../components/Layout/Footer";
+import Layout from "../../components/Layout/Layout";
 
 export const Register = () => {
   const [name, setName] = useState("");
@@ -35,8 +34,7 @@ export const Register = () => {
   };
 
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="flex items-center justify-center h-screen flex-col bg-orange-100 bg-gradient-to-r from-orange-200 to-orange-900">
         <form
           className="shadow-lg rounded-lg shadow-zinc-900 p-5 w-2/4 bg-white"
@@ -107,7 +105,6 @@ export const Register = () => {
           </div>
         </form>
       </div>
-      <Footer />
-    </>
+    </Layout>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Layout/Header";
-import Footer from "../../components/Layout/Footer";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Layout from "../../components/Layout/Layout";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/authSlice";
 
 export const Login = (e) => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ export const Login = (e) => {
   const [auth, setAuth] = useState();
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,11 +23,9 @@ export const Login = (e) => {
       );
       if (response && response.data.success) {
         toast.success(response.data && response.data.message);
-        setAuth({
-          ...auth,
-          user: response.data.user,
-          token: response.data.token,
-        });
+        dispatch(
+          login({ user: response.data.user, token: response.data.token })
+        );
         localStorage.setItem("auth", JSON.stringify(response.data));
         navigate("/");
       } else {
@@ -37,8 +37,7 @@ export const Login = (e) => {
     }
   };
   return (
-    <>
-      <Header />
+    <Layout>
       <div className=" flex items-center justify-center h-96 flex-col bg-orange-100 bg-gradient-to-r from-orange-200 to-orange-900">
         <form
           onSubmit={handleSubmit}
@@ -74,7 +73,6 @@ export const Login = (e) => {
           </div>
         </form>
       </div>
-      <Footer />
-    </>
+    </Layout>
   );
 };

@@ -14,7 +14,7 @@ connectDB();
 
 // setting all the routes here
 
-app.use("/", tripRoute);
+app.use("/api/v1", tripRoute);
 app.use("/api/auth", authRoute);
 
 // starting the server

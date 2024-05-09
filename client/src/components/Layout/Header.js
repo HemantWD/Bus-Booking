@@ -1,72 +1,68 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsBusFront } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { setUserAndToken } from "../../redux/authSlice";
+import { login, logout } from "../../redux/authSlice";
+import { toast } from "react-toastify";
 
 export const Header = () => {
   const auth = useSelector((state) => state.auth);
-
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch(setUserAndToken({ user: null, token: "" }));
+    dispatch(logout());
     localStorage.removeItem("authData");
+    toast.success("Logged out successfully");
   };
 
-  const handleOnclick = () => {
+  const handleLoginClick = () => {
     navigate("/login");
   };
-  const handleClick = () => {
+
+  const handleRegisterClick = () => {
     navigate("/register");
   };
+
   return (
-    <nav className="mt-2 flex h-14 justify-between content-center py-0 px-10 mr-auto text-orange-500 text-xl font-bold ">
-      <ul className="p-2 flex content-center list-none ">
-        <BsBusFront />
-        <a className="mx-2.5" href="/">
+    <div className="flex items-center justify-between h-16 p-4 bg-gray-200 ">
+      <div className="flex items-center space-x-4">
+        <BsBusFront className="text-2xl" />
+        <Link to="/" className="text-lg text-orange-500 font-bold">
           Reserve
-        </a>
-        <li className="mr-2.5">
-          <a className="mx-2.5" href="/">
-            Ticket
-          </a>
-        </li>
-        <li className="mr-2.5">
-          <a className="mx-2.5" href="#contact">
-            Contact Us
-          </a>
-        </li>
-      </ul>
-      <ul>
-        {!auth.user ? (
+        </Link>
+        <Link to="/" className="text-lg text-orange-500">
+          Ticket
+        </Link>
+        <Link to="#contact" className="text-lg text-orange-500">
+          Contact Us
+        </Link>
+      </div>
+      <div>
+        {auth.isAuthenticated ? (
+          <button
+            onClick={handleLogout}
+            className="rounded bg-orange-600 text-white py-2 px-4 hover:bg-orange-700"
+          >
+            Logout
+          </button>
+        ) : (
           <>
             <button
-              className="rounded text-white bg-orange-600 font-bold py-2 px-6 ml-2 hover:bg-indigo-500 duration-500"
-              onClick={handleClick}
+              onClick={handleRegisterClick}
+              className="rounded bg-orange-600 text-white py-2 px-4 mr-4 hover:bg-orange-700"
             >
               Register
             </button>
             <button
-              className="rounded text-white bg-orange-600 font-bold py-2 px-6 ml-2 hover:bg-indigo-500 duration-500"
-              onClick={handleOnclick}
+              onClick={handleLoginClick}
+              className="rounded bg-orange-600 text-white py-2 px-4 hover:bg-orange-700"
             >
               Login
             </button>
           </>
-        ) : (
-          <>
-            <button
-              className="rounded text-white bg-orange-600 font-bold py-2 px-6 ml-px-2 hover:bg-indigo-500 duration-500"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-          </>
         )}
-      </ul>
-    </nav>
+      </div>
+    </div>
   );
 };
