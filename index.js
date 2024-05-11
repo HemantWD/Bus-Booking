@@ -4,6 +4,7 @@ import connectDB from "./config/db.js";
 import cors from "cors";
 import tripRoute from "./routes/tripRoute.js";
 import authRoute from "./routes/authRoute.js";
+import stateRoute from "./routes/stateRoute.js";
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,7 @@ connectDB();
 
 app.use("/api/v1", tripRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/v1/state", stateRoute);
 
 // starting the server
 const port = process.env.PORT || 5000;
