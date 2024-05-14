@@ -35,7 +35,7 @@ export const Register = () => {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center h-screen flex-col bg-orange-100 bg-gradient-to-r from-orange-200 to-orange-900">
+      <div className="flex items-center justify-center min-h-screen flex-col bg-orange-100 bg-gradient-to-r from-orange-200 to-orange-900">
         <form
           className="shadow-lg rounded-lg shadow-zinc-900 p-5 w-2/4 bg-white"
           onSubmit={handleSubmit}

@@ -5,8 +5,8 @@ import wallpaper from "../assets/bus.jpg";
 
 export const Home = () => {
   const [statesData, setStatesData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+  const [selectedFromDistricts, setSelectedFromDistricts] = useState("");
+  const [selectedToDistricts, setSelectedToDistricts] = useState("");
 
   const getStates = async () => {
     try {
@@ -14,7 +14,12 @@ export const Home = () => {
         `${process.env.REACT_APP_API}/api/v1/state/districts`
       );
       // console.log(response.data.states);
-      setStatesData(response.data.states);
+      const allDistricts = response.data.states
+        .flatMap((state) => state.districts)
+        .sort((a, b) => a.localeCompare(b));
+
+      // console.log(allDistricts);
+      setStatesData(allDistricts);
     } catch (error) {
       console.log(error);
     }
@@ -23,29 +28,6 @@ export const Home = () => {
   useEffect(() => {
     getStates();
   }, []);
-
-  const handleInputChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-
-    if (query.length > 0) {
-      const filteredSuggestions = statesData.filter(
-        (stateObj) =>
-          stateObj.state.toLowerCase().includes(query.toLowerCase()) ||
-          stateObj.district.some((district) =>
-            district.toLowerCase().includes(query.toLowerCase())
-          )
-      );
-      setSuggestions(filteredSuggestions);
-    } else {
-      setSuggestions([]);
-    }
-  };
-
-  const handleSuggestionClick = (value) => {
-    setSearchQuery(value);
-    setSuggestions([]);
-  };
 
   return (
     <div className="w-full h-screen relative">
@@ -56,16 +38,31 @@ export const Home = () => {
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4 z-50">
         <div className="flex  h-20 w-full py-1 px-3 text-lg">
-          <input
-            type="text"
-            className="border border-black mx-2.5 my-2.5 px-3 py-3 rounded-lg"
-            placeholder="From"
-          />
-          <input
-            type="text"
-            className="border border-black mx-2.5 my-2.5 px-3 py-3 rounded-lg"
-            placeholder="To"
-          />
+          <select
+            value={selectedFromDistricts}
+            onChange={(e) => setSelectedFromDistricts(e.target.value)}
+            className="border border-black mx-2.5 my-2.5 rounded-lg px-3 py-3"
+          >
+            <option value="">From</option>
+            {statesData.map((district, index) => (
+              <option key={index} value={district}>
+                {district}
+              </option>
+            ))}
+          </select>
+          <select
+            value={selectedToDistricts}
+            onChange={(e) => setSelectedToDistricts(e.target.value)}
+            className="border border-black mx-2.5 my-2.5 rounded-lg px-3 py-3"
+          >
+            <option value="">To</option>
+            {statesData.map((district, index) => (
+              <option key={index} value={district}>
+                {district}
+              </option>
+            ))}
+          </select>
+          ]
           <input
             type="date"
             className="border border-black mx-2.5 my-2.5 px-3 py-3 rounded-lg"

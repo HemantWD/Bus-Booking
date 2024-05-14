@@ -1,4 +1,3 @@
-// stateModel.js
 import mongoose from "mongoose";
 
 const stateSchema = new mongoose.Schema({
